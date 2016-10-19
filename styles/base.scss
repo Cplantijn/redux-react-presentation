@@ -1,0 +1,66 @@
+
+html, body, #root, #presentationRoot, .slide-container {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  background: black;
+  color: white;
+  h1, h2 {
+    color: white;
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  &.align-middle {
+    justify-content: center;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+
+#presentationRoot {
+  display: flex;
+}
+
+.transition-btn {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  margin: auto 0;
+  box-shadow: 0 0 3px black;
+  background: white;
+  outline: none;
+  border: none;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 100;
+  &.left-transition{
+    left: 0;
+  }
+  &.right-transition{
+    right: 0;
+  }
+  &:hover {
+    background: darken(white, 20%);
+  }
+}
+
+.center-video {
+  width: 90%;
+  height: auto;
+}
