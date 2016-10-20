@@ -1,4 +1,1 @@
-# ArduinoCarPresentation
-ArduinoCarPresentation written React / Redux
-
-#A test
+# Simple Presentation Library using React & Redux

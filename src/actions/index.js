@@ -1,15 +1,30 @@
+import {
+  GO_SLIDE_BACK,
+  GO_SLIDE_FORWARDS,
+  GO_ARTICLE_FORWARD,
+  GO_ARTICLE_BACK
+} from '../constants/actionTypes';
 
-export const GO_TO_NEXT_SLIDE = 'GO_TO_NEXT_SLIDE';
-export const GO_TO_PREV_SLIDE = 'GO_TO_PREV_SLIDE';
-
-export function goToNextSlide() {
+export function goNextSlide() {
   return {
-    type: GO_TO_NEXT_SLIDE
+    type: GO_SLIDE_FORWARDS
   };
 }
 
-export function goToPrevSlide() {
+export function goBackSlide() {
   return {
-    type: GO_TO_PREV_SLIDE
+    type: GO_SLIDE_BACK
+  };
+}
+
+export function goNextArticle() {
+  return {
+    type: GO_ARTICLE_FORWARD
+  };
+}
+
+export function goPrevArticle() {
+  return {
+    type: GO_ARTICLE_BACK
   };
 }

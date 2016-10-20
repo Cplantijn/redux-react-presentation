@@ -6,7 +6,7 @@ html, body, #root, #presentationRoot, .slide-container {
 
 #root {
   background: black;
-  color: white;
+
   h1, h2 {
     color: white;
   }
@@ -16,6 +16,7 @@ h1 {
   font-size: 4rem;
   text-align: center;
 }
+
 h2 {
   font-size: 2rem;
   text-align: center;
@@ -24,16 +25,14 @@ h2 {
 .flex {
   display: flex;
   flex-direction: column;
+
   &.align-middle {
     justify-content: center;
   }
+
   &.align-center {
     align-items: center;
   }
-}
-
-#presentationRoot {
-  display: flex;
 }
 
 .transition-btn {
@@ -58,9 +57,4 @@ h2 {
   &:hover {
     background: darken(white, 20%);
   }
-}
-
-.center-video {
-  width: 90%;
-  height: auto;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createLogger from 'redux-logger';
-import Presentation from './components/Presentation';
+import Presentation from './containers/Presentation';
 import reducers from './reducers';
 
 const loggerMiddleware = createLogger();
@@ -16,11 +16,9 @@ const store = createStoreWithMiddleWare(reducers);
 
 const rootEl = document.getElementById('root');
 
-ReactDOM.render(
+render(
   <Provider store={store}>
-    <Presentation
-      slide={store.getState()}
-     />
+    <Presentation />
   </Provider>,
   rootEl
-)
+);
