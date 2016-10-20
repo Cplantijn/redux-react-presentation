@@ -1,18 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import configureStore  from './store/createStore';
 import { Provider } from 'react-redux';
-import createLogger from 'redux-logger';
 import Presentation from './containers/Presentation';
-import reducers from './reducers';
 
-const loggerMiddleware = createLogger();
-
-const createStoreWithMiddleWare = applyMiddleware(
-  loggerMiddleware
-)(createStore);
-
-const store = createStoreWithMiddleWare(reducers);
+const store = configureStore();
 
 const rootEl = document.getElementById('root');
 

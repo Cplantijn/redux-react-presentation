@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700');
+
+$open_sans: 'Open Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
 
 html, body, #root, #presentationRoot, .slide-container, .slide {
   height: 100%;
@@ -5,11 +9,16 @@ html, body, #root, #presentationRoot, .slide-container, .slide {
   overflow: hidden;
 }
 
+.montserrat {
+  font-family: $montserrat;
+}
+
 #root {
   background: black;
 
   h1, h2 {
-    color: white;
+    font-family: $montserrat;
+    margin-bottom: 1rem;
   }
 }
 
@@ -19,18 +28,55 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  &.column {
+    flex-direction: column;
+  }
+  &.align-center {
+    justify-content: center;
+  }
+  &.align-middle {
+    align-items: center;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+ul.no-bullets {
+  li {
+    list-style-type: none;
+    letter-spacing: 0.05rem;
+  }
+}
+.overflow-x {
+  overflow-x: scroll;
+}
+ul.features-list {
+  margin-left: 10rem;
+  li {
+    font-size: 2rem;
+    padding: 0.5rem 0;
+  }
 }
 
 .slide-container {
   display: flex;
   overflow: hidden;
 }
+
 .slide {
   display: none;
-  justify-content: center;
-  align-items: center;
   flex: 1;
   transition: 0.8s ease-in-out;
 
@@ -50,5 +96,24 @@ h2 {
 
   &.prev {
     transform: translateX(-100%);
+  }
+}
+
+.code-container-expanded {
+  &.space-around {
+    justify-content: space-around;
+  }
+  margin: 0 2rem;
+  pre {
+    border-radius: 6px;
+    margin: 0 0.25rem;
+  }
+}
+.code-container {
+  flex: 1;
+  margin: 0 14rem;
+
+  pre {
+    border-radius: 6px;
   }
 }

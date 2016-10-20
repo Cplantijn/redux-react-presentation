@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import SlideWrapper from '../components/SlideWrapper';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // Import all slides
 import SlideOne from '../components/SlideOne';
@@ -11,6 +9,9 @@ import SlideTwo from '../components/SlideTwo';
 import SlideThree from '../components/SlideThree';
 import SlideFour from '../components/SlideFour';
 import SlideFive from '../components/SlideFive';
+import SlideSix from '../components/SlideSix';
+import SlideSeven from '../components/SlideSeven';
+import SlideEight from '../components/SlideEight';
 
 
 class Presentation extends Component {
@@ -45,15 +46,16 @@ class Presentation extends Component {
 
     return (
       <div id="presentationRoot">
-        <ReactCSSTransitionGroup
-          className="slide-container"
-          compontent="ul">
-          <SlideOne slideOrder={0} {...this.props}/>
-          <SlideTwo slideOrder={1}  {...this.props}/>
+        <div className="slide-container">
+          <SlideOne slideOrder={0} color="#fff" {...this.props}/>
+          <SlideTwo slideOrder={1} bgColor="#00d8ff" {...this.props}/>
           <SlideThree slideOrder={2} {...this.props}/>
-          <SlideFour slideOrder={3} {...this.props}/>
-          <SlideFive slideOrder={4} {...this.props}/>
-        </ReactCSSTransitionGroup>
+          <SlideFour slideOrder={3} bgColor="#DB3A34" color="#fff"{...this.props}/>
+          <SlideFive slideOrder={4} color="#fff" bgColor="#774abc" {...this.props}/>
+          <SlideSix slideOrder={5} color="#fff" bgColor="#A54657" {...this.props}/>
+          <SlideSeven slideOrder={6} color="#fff" bgColor="#48A9A6" {...this.props}/>
+          <SlideEight slideOrder={7} color="#fff" bgColor="#E9724C" {...this.props}/>
+        </div>
       </div>
     );
   }
