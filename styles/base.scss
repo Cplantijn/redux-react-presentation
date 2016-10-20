@@ -1,7 +1,8 @@
 
-html, body, #root, #presentationRoot, .slide-container {
+html, body, #root, #presentationRoot, .slide-container, .slide {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 #root {
@@ -22,39 +23,32 @@ h2 {
   text-align: center;
 }
 
-.flex {
+.slide-container {
   display: flex;
-  flex-direction: column;
-
-  &.align-middle {
-    justify-content: center;
-  }
-
-  &.align-center {
-    align-items: center;
-  }
+  overflow: hidden;
 }
+.slide {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.8s ease-in-out;
 
-.transition-btn {
-  width: 4rem;
-  height: 4rem;
-  position: fixed;
-  margin: auto 0;
-  box-shadow: 0 0 3px black;
-  background: white;
-  outline: none;
-  border: none;
-  top: 0;
-  bottom: 0;
-  cursor: pointer;
-  z-index: 100;
-  &.left-transition{
-    left: 0;
+  &.active {
+    display: flex;
+    transform: translateX(0%);
   }
-  &.right-transition{
-    right: 0;
+
+  &.next, &.prev {
+    display: flex;
+    position: absolute;
   }
-  &:hover {
-    background: darken(white, 20%);
+
+  &.next {
+    transform: translateX(100%);
+  }
+
+  &.prev {
+    transform: translateX(-100%);
   }
 }

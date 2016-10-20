@@ -3,9 +3,15 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import SlideWrapper from '../components/SlideWrapper';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // Import all slides
-import SlideOne from './SlideOne';
+import SlideOne from '../components/SlideOne';
+import SlideTwo from '../components/SlideTwo';
+import SlideThree from '../components/SlideThree';
+import SlideFour from '../components/SlideFour';
+import SlideFive from '../components/SlideFive';
+
 
 class Presentation extends Component {
 
@@ -39,19 +45,15 @@ class Presentation extends Component {
 
     return (
       <div id="presentationRoot">
-        <button
-          className="transition-btn left-transition"
-          onClick={goBack}>
-          <i className="fa fa-2x fa-caret-left"></i>
-        </button>
-        <SlideWrapper>
-          <SlideOne />
-        </SlideWrapper>
-        <button
-          className="transition-btn right-transition"
-          onClick={goNext}>
-          <i className="fa fa-2x fa-caret-right"></i>
-        </button>
+        <ReactCSSTransitionGroup
+          className="slide-container"
+          compontent="ul">
+          <SlideOne slideOrder={0} {...this.props}/>
+          <SlideTwo slideOrder={1}  {...this.props}/>
+          <SlideThree slideOrder={2} {...this.props}/>
+          <SlideFour slideOrder={3} {...this.props}/>
+          <SlideFive slideOrder={4} {...this.props}/>
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

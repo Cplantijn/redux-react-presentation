@@ -364,13 +364,13 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-html, body, #root, #presentationRoot, .slide-container {
+html, body, #root, #presentationRoot, .slide-container, .slide {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 #root {
-  background: black;
-  color: white; }
+  background: black; }
   #root h1, #root h2 {
     color: white; }
 
@@ -382,92 +382,23 @@ h2 {
   font-size: 2rem;
   text-align: center; }
 
-.flex {
+.slide-container {
   display: flex;
-  flex-direction: column; }
-  .flex.align-middle {
-    justify-content: center; }
-  .flex.align-center {
-    align-items: center; }
+  overflow: hidden; }
 
-#presentationRoot {
-  display: flex; }
-
-.transition-btn {
-  width: 4rem;
-  height: 4rem;
-  position: fixed;
-  margin: auto 0;
-  box-shadow: 0 0 3px black;
-  background: white;
-  outline: none;
-  border: none;
-  top: 0;
-  bottom: 0;
-  cursor: pointer;
-  z-index: 100; }
-  .transition-btn.left-transition {
-    left: 0; }
-  .transition-btn.right-transition {
-    right: 0; }
-  .transition-btn:hover {
-    background: #cccccc; }
-
-.center-video {
-  width: 90%;
-  height: auto; }
-
-#slideOne {
-  background: url("/../../assets/slide_one.jpg");
-  background-size: cover;
-  background-position: center center;
-  text-shadow: 1px 1px 5px black; }
-  #slideOne h1 {
-    font-size: 6rem; }
-
-#slideTwo {
-  position: relative;
-  background: #100d11; }
-  #slideTwo h1 {
-    margin-top: 2rem; }
-
-#slideThree {
-  background: url("/../../assets/slide_three.jpg");
-  background-size: cover;
-  background-position: center center; }
-
-#slideFour {
-  background: url("/../../assets/slide_four.jpg");
-  background-size: cover;
-  background-position: center center; }
-
-#slideFive {
-  background: url("/../../assets/slide_five.jpg");
-  background-size: cover;
-  background-position: center center; }
-
-#slideSix {
-  position: relative;
-  background: #6faa97; }
-  #slideSix h1 {
-    margin-top: 2rem; }
-
-#slideSeven {
-  position: relative;
-  background: #452d2d; }
-  #slideSeven h1 {
-    margin-top: 2rem; }
-
-#slideEight {
-  background: url("/../../assets/slide_eight.jpg");
-  background-size: cover;
-  background-position: center center; }
-
-#slideNine {
-  background: url("/../../assets/slide_nine.jpg");
-  background-size: cover;
-  background-color: #8fb811;
-  background-position: center center; }
-
-#slideEnd {
-  background: black; }
+.slide {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: 0.8s ease-in-out; }
+  .slide.active {
+    display: flex;
+    transform: translateX(0%); }
+  .slide.next, .slide.prev {
+    display: flex;
+    position: absolute; }
+  .slide.next {
+    transform: translateX(100%); }
+  .slide.prev {
+    transform: translateX(-100%); }
