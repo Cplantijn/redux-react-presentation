@@ -225,7 +225,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);`;
         </div>
         <div className="code-container-expanded flex space-around">
           <div className="col counter-initial-state">
-            <h3>{'Initial (Previous) State'}</h3>
+            <h3>{'Initial (Prev) State'}</h3>
             <SyntaxHighlighter language="javascript" style={atomOneDark}>
               {mockInitState}
             </SyntaxHighlighter>
@@ -245,7 +245,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);`;
             <i className="fa fa-arrow-circle-o-right fa-3x"></i>
           </div>
           <div className="col counter-new-state">
-            <h3>{'New State'}</h3>
+            <h3>{'New State Returned'}</h3>
             <SyntaxHighlighter language="javascript" style={atomOneDark}>
               {mockNewState}
             </SyntaxHighlighter>

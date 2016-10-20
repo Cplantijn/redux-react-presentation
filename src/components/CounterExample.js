@@ -10,24 +10,24 @@ export default class CounterExample extends Component {
     } = this.props;
 
     return (
-      <div>
-        <h3>Value of counter: {value}</h3>
+      <div className="flex column align-center">
+        <h2>Value of counter: {value}</h2>
+        <div className="text-center">
+          <button
+            onClick={incrementCounter}>
+            Increment
+          </button>
 
-        <button
-          onClick={incrementCounter}>
-          Increment
-        </button>
+          <button
+            onClick={decrementCounter}>
+            Decrement
+          </button>
 
-        <button
-          onClick={decrementCounter}>
-          Decrement
-        </button>
-
-        <button
-          onClick={clearCounter}>
-          Clear
-        </button>
-
+          <button
+            onClick={clearCounter}>
+            Clear
+          </button>
+        </div>
       </div>
     );
   }
